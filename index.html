@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile card hover effect</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body{
+            margin: 0;
+            /* background-image: url(background8.jpg); */
+            /* background-position: bottom center; */
+            /* background-size: cover; */
+            /* width: 100%;
+            height: 100%; */
+            /* background-repeat: no-repeat; */
+            font-family: tahoma;
+        }
+
+        /* header{
+          
+        } */
+
+        .page{
+            background-image:url(img/background8.jpg);
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .page-container{
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: auto;
+        }
+
+        .profile{
+            box-sizing: border-box;
+            max-width: 380px;
+            padding-top: 40px;
+            font-family: tahoma;
+            font-size: 14px;
+            font-weight: 400;
+            color: #d1a786;
+            background-color: white;
+            text-align: center;
+            position: relative;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .profile:before{
+            content: "";
+            width: 85px;
+            height: 50px;
+            transition: transform 0.5s cubic-bezier(0.42, 0.04, 0.13, 0.92);
+            border-radius: 50%;
+            background-color: #d1a786;
+            position: absolute;
+            top: -70px;
+            left: 50%;
+            z-index: -1;
+            transform: translateX(-50%) scale(7);
+        }
+
+        .profile:hover:before{
+            transition: transform 0.7s cubic-bezier(0.77, 0.09, 0, 1.31);
+            transform: translateX(-50%) translateY(200%) scale(25);
+        }
+
+        .profile:hover, 
+        .profile:hover .profile-value{
+            color: white;
+        }
+
+
+        .profile:hover .profile-social,
+        .profile:hover .profile-param{
+            color: black;
+        }
+
+        .profile:hover .profile-group,
+        .profile:hover .profile-avatar{
+            border-color: white;
+        }
+
+        .profile:hover .profile-stats{
+            background-color:#4f4e4e;
+        }
+
+        .profile-header{
+            transition: color 0.4s ease-out .ls;
+        }
+
+        .profile-avatar{
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            border:5px solid white;
+            transition: border-color 0.4s ease-out .ls;
+        }
+
+        .profile:hover .profile-avatar{
+            transition-delay: 0.2s;
+        }
+
+        .profile-name {
+            margin-top: 10px;
+            margin-right: 0;
+            font-size: 30px;
+        }
+
+        .profile-stats {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            background-color: #FFF8DC;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            transition: background-color 0.4s ease-out .ls;
+
+        }
+
+        .profile:hover .profile-stats{
+            transition-delay: 0.2s;
+        }
+
+        .profile-group{
+            box-sizing: border-box;
+            width: 33.333%;
+            transition: border-color 0.4s ease-out .ls;
+            border-right:1px solid #d1a786;
+            padding-left:2%;
+            padding-right:2%;
+        }
+
+        .profile:hover .profile-group{
+            transition-delay: 0.4s;
+        }
+
+        .profile-group:nth-children(n+4){
+            margin-top: 20px;
+        }
+
+        .profile-group:nth-children(3n+3){
+         border-right: none;
+        }
+
+        .profile-param .profile-value{
+            display: block;
+            transition: color 0.4s ease-out .ls;   
+        }
+
+        .profile-param{
+            text-transform: uppercase;
+        }
+
+        .profile-value{
+            font-size: 30px;
+            color: #fead571;
+            font-weight: 700px;
+        }
+
+        .profile-socials{
+            padding-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            font-size: 17px;
+        }
+
+        .profile-social{
+            border: 4px solid #d8c5b7;
+            color:#fead57;
+            border-radius:50%;
+            transition: color 0.4s ease-out 0.3s;
+            width:18px;
+            height: 18px;
+            padding:15px;
+            position: relative;
+            margin-right:10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="page-container">
+            <article class="profile">
+                <header class="profile-header">
+                    <img src="profile.png" alt="" class="profile-avatar" width="100px">
+                    <h3 class="profile-name">Sri Yunianita</h3>
+                    <span class="profile-post">Software Engineer</span>
+                </header>
+
+
+                <div class="profile-stats">
+                    <div class="profile-group">
+                        <span class="profile-value">80%</span>
+                        <span class="profile-param">HTML</span>
+                    </div>
+                    <div class="profile-group">
+                        <span class="profile-value">80%</span>
+                        <span class="profile-param">CSS</span>
+                    </div>
+                    <div class="profile-group">
+                        <span class="profile-value">80%</span>
+                        <span class="profile-param">WEB DESIGN</span>
+                    </div>
+                    <div class="profile-group">
+                        <span class="profile-value">60%</span>
+                        <span class="profile-param">ANIMATION</span>
+                    </div>
+                    <div class="profile-group">
+                        <span class="profile-value">60%</span>
+                        <span class="profile-param">JAVASCRIPT</span>
+                    </div>
+                    <div class="profile-group">
+                        <span class="profile-value">75%</span>
+                        <span class="profile-param">PHP</span>
+                    </div>
+                </div>
+                
+                <footer class="profile-socials">
+                    <a href="" class="profile-social">
+                        <i class="fa fa-twitter"></i>
+                    </a>
+                    <a href="" class="profile-social">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                    <a href="" class="profile-social">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                </footer>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
